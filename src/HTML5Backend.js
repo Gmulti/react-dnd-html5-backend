@@ -429,7 +429,7 @@ export default class HTML5Backend {
       // This is probably a native item type we don't understand.
       // Prevent default "drop and blow away the whole document" action.
       e.preventDefault();
-      e.dataTransfer.dropEffect = 'none';
+      e.dataTransfer.dropEffect = 'move';
       return;
     }
 
@@ -449,7 +449,7 @@ export default class HTML5Backend {
       // Don't show a nice cursor but still prevent default
       // "drop and blow away the whole document" action.
       e.preventDefault();
-      e.dataTransfer.dropEffect = 'none';
+      e.dataTransfer.dropEffect = 'move';
     } else if (this.checkIfCurrentDragSourceRectChanged()) {
       // Prevent animating to incorrect position.
       // Drop effect must be other than 'none' to prevent animation.
